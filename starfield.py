@@ -43,12 +43,15 @@ def loadStars(earth, sfname):
 
             #print starMag, starX, starY, starZ
             # convert star magnitude to object size
-            refinedScale = (25 - (starMag + 1.5)) * 3
-            if refinedScale < 1:
-                refinedScale = 1
+#            refinedScale = (25 - (starMag + 1.5)) * 3
+            refinedScale = (25 - (starMag + 1.5))
+            refinedScale = refinedScale * refinedScale * refinedScale / 50
+
+            if refinedScale < 1: # < 1
+                refinedScale = 1 # 1
 
             sfmodel.addVertex(Vector3(starX, starY, starZ))
-            sfmodel.addColor(Color(1, 1, 1, refinedScale))
+            sfmodel.addColor(Color(1, 1, 1, refinedScale)) # color doesnt matter
             i = i + 1
 
     # add single primitive batch containing all the stars.
