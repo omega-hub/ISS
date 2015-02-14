@@ -23,7 +23,7 @@ def loadStars(earth, sfname):
     starZ = float(0)
 
     sfmodel = ModelGeometry.create("starfield")
-    sfmodel.addVertex(Vector3(0, 0, 0))
+    #sfmodel.addVertex(Vector3(0, 0, 0))
     getSceneManager().addModel(sfmodel)
     i = 0
     # for now lets start with 4000 stars in the data file
